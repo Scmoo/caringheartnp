@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caring Heart Family Nurse Practitioner — compassionate, personalized primary care in Central Florida. Schedule an appointment online or call (407) 550-7077.">
+  <title>Home | Caring Heart Family Nurse Practitioner</title>
+
+  <!-- Favicon (use your logo file here once you have it locally) -->
+  <link rel="icon" href="https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png" type="image/png">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #1a0b0d;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://static.wixstatic.com/media/11062b_4c43b6f6671549a2aee7b78abf49f3f8~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_4c43b6f6671549a2aee7b78abf49f3f8~mv2.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.42;
+    }
+
+    /* Gradient vignette over the bg */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 20%, rgba(20,8,8,0.55) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 48px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hero-logo {
+      width: clamp(120px, 22vw, 180px);
+      height: auto;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
+    }
+
+    .hero-brand {
+      margin-top: 16px;
+    }
+
+    .hero-brand .script {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--color-crimson-light);
+      line-height: 1;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+      display: block;
+    }
+
+    .hero-brand .subtitle {
+      display: block;
+      font-size: clamp(0.7rem, 1.8vw, 0.95rem);
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      margin-top: 6px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-emergency {
+      margin-top: 28px;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      background: rgba(20,8,8,0.45);
+      padding: 10px 24px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-emergency strong {
+      color: #ff6b6b;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .hero-actions .btn {
+      border-radius: var(--border-radius);
+      font-size: 0.95rem;
+      padding: 15px 28px;
+      font-weight: 500;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.5;
+      animation: bounce 2s infinite;
+    }
+
+    .hero-scroll span {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-white);
+    }
+
+    .hero-scroll svg { color: var(--color-white); }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── Trust Bar ── */
+    .trust-bar {
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-gray-200);
+      padding-block: 20px;
+    }
+
+    .trust-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 32px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-gray-600);
+    }
+
+    .trust-item svg {
+      color: var(--color-crimson);
+      flex-shrink: 0;
+    }
+
+    /* ── Welcome Section ── */
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .welcome-img {
+      position: relative;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .welcome-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Decorative accent behind image */
+    .welcome-img::before {
+      content: '';
+      position: absolute;
+      inset: -16px -16px 16px 16px;
+      z-index: -1;
+      border-radius: var(--border-radius-lg);
+      border: 2px solid var(--color-crimson);
+      opacity: 0.25;
+    }
+
+    .welcome-text .divider { margin-block: 16px 0; }
+    .welcome-text p { color: var(--color-gray-600); margin-top: 16px; line-height: 1.8; }
+    .welcome-text .btn { margin-top: 28px; }
+
+    @media (max-width: 768px) {
+      .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .welcome-img { aspect-ratio: 16/9; }
+    }
+
+    /* ── Services Cards ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius-lg);
+      padding: 32px 28px;
+      border: 1px solid var(--color-gray-200);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-crimson);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--color-gray-100), var(--color-off-white));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--color-crimson);
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--color-gray-800);
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--color-gray-600);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    /* ── Why Choose Us ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .why-item {
+      text-align: center;
+      padding: 36px 24px;
+      border-radius: var(--border-radius-lg);
+      background: var(--color-white);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-gray-200);
+    }
+
+    .why-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--color-crimson);
+      line-height: 1;
+    }
+
+    .why-item h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 12px;
+      color: var(--color-gray-800);
+    }
+
+    .why-item p {
+      font-size: 0.87rem;
+      color: var(--color-gray-600);
+      margin-top: 8px;
+      line-height: 1.7;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── CTA Strip ── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--color-crimson-dark) 0%, var(--color-crimson) 55%, #c94a1a 100%);
+      padding-block: 72px;
+      text-align: center;
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta-strip h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--color-white);
+      position: relative;
+    }
+
+    .cta-strip p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+      margin: 12px auto 0;
+      position: relative;
+    }
+
+    .cta-strip .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 32px;
+      position: relative;
+    }
+
+    .cta-strip .btn-white {
+      background: var(--color-white);
+      color: var(--color-crimson);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .cta-strip .btn-white:hover {
+      background: var(--color-off-white);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Emergency Top Bar -->
+  <div class="emergency-bar">
+    <strong>Medical Emergency?</strong> Call <strong>911</strong> immediately. For appointments call <a href="tel:4075507077" style="color:var(--color-gold-light);font-weight:600;">(407) 550-7077</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a href="../home/" class="nav-logo" aria-label="Caring Heart FNP — Home">
+        <img src="https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png" alt="Caring Heart FNP Logo">
+        <div class="nav-logo-text">
+          <span class="name">Caring Heart</span>
+          <span class="tagline">Family Nurse Practitioner</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" role="list">
+        <li><a href="../home/">Home</a></li>
+        <li><a href="../services/">Services Available</a></li>
+        <li><a href="../patient-portal/">Patient Portal</a></li>
+        <li><a href="../contact/">Contact Us</a></li>
+        <li><a href="../about/">About Us</a></li>
+        <li><a href="../privacy-policy/">Privacy Policy</a></li>
+        <li><a href="../appointment/" class="nav-cta">Make an Appointment</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero banner">
+    <div class="hero-bg" role="img" aria-label="Doctor consulting with patient"></div>
+
+    <div class="hero-content">
+      <img
+        src="https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png"
+        alt="Caring Heart FNP Logo"
+        class="hero-logo animate-fade-up"
+      >
+
+      <div class="hero-brand animate-fade-up-delay-1">
+        <span class="script">Caring Heart</span>
+        <span class="subtitle">Family Nurse Practitioner</span>
+      </div>
+
+      <p class="hero-emergency animate-fade-up-delay-2">
+        *If you're experiencing a medical emergency, call <strong>911</strong> immediately.
+      </p>
+
+      <div class="hero-actions animate-fade-up-delay-3">
+        <a href="../appointment/" class="btn btn-primary btn-full">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Schedule An Appointment Online
+        </a>
+        <a href="../appointment/#home-visits" class="btn btn-ghost btn-full">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          For Home, Bed Bound, or Wound Visits
+        </a>
+        <a href="tel:4075507077" class="btn btn-ghost btn-full">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Other Questions? (407) 550-7077
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Board-Certified NP
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home &amp; Bedbound Visits
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Online Appointment Booking
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Patient-Centered Care
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Wound Care Specialists
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="section" aria-labelledby="welcome-heading">
+    <div class="container">
+      <div class="welcome-grid">
+
+        <div class="welcome-img reveal">
+          <img
+            src="https://static.wixstatic.com/media/11062b_4c43b6f6671549a2aee7b78abf49f3f8~mv2.jpg/v1/fill/w_800,h_1000,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_4c43b6f6671549a2aee7b78abf49f3f8~mv2.jpg"
+            alt="Healthcare professional consulting with patient"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="welcome-text reveal reveal-delay-2">
+          <p class="section-eyebrow">Welcome</p>
+          <h2 id="welcome-heading" class="section-title">Compassionate Care<br>Close to Home</h2>
+          <div class="divider"></div>
+          <p>At Caring Heart Family Nurse Practitioner, we believe every patient deserves personalized, attentive healthcare. Whether you visit our office, need care at home, or require wound management, our dedicated team is here for you.</p>
+          <p>We proudly serve patients throughout Central Florida, offering flexible scheduling and a warm, welcoming environment where you always come first.</p>
+          <a href="../about/" class="btn btn-primary">Meet Our Team</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Highlight -->
+  <section class="section section--alt" aria-labelledby="services-heading">
+    <div class="container text-center">
+      <p class="section-eyebrow reveal">What We Offer</p>
+      <h2 id="services-heading" class="section-title reveal reveal-delay-1">Our Services</h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="margin-inline:auto;">Comprehensive primary care tailored to your needs, from routine check-ups to specialized wound care.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Primary Care</h3>
+          <p>Routine physicals, chronic disease management, preventive screenings, and more for all ages.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Home &amp; Bedbound Visits</h3>
+          <p>We come to you. Comprehensive care delivered in the comfort and safety of your own home.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Wound Care</h3>
+          <p>Expert assessment and treatment of acute and chronic wounds, including debridement and dressing changes.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Online Appointments</h3>
+          <p>Book your visit at any time through our convenient online scheduling portal — quick and easy.</p>
+        </div>
+
+      </div>
+
+      <a href="../services/" class="btn btn-secondary mt-12 reveal">View All Services</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container text-center">
+      <p class="section-eyebrow reveal">Why Patients Choose Us</p>
+      <h2 id="why-heading" class="section-title reveal reveal-delay-1">Care That Goes Further</h2>
+
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-number">01</div>
+          <h3>Personalized Attention</h3>
+          <p>We take time to truly understand each patient's unique health journey and goals.</p>
+        </div>
+        <div class="why-item reveal reveal-delay-1">
+          <div class="why-number">02</div>
+          <h3>Flexible Scheduling</h3>
+          <p>Online booking, home visits, and accommodating hours to fit your busy life.</p>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="why-number">03</div>
+          <h3>Experienced Provider</h3>
+          <p>Board-certified expertise combined with genuine compassion for every patient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section class="cta-strip" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading" class="reveal">Ready to Get Started?</h2>
+      <p class="reveal reveal-delay-1">Schedule your appointment today or give us a call — we're here to help.</p>
+      <div class="cta-buttons reveal reveal-delay-2">
+        <a href="../appointment/" class="btn btn-white btn-lg">Schedule Online</a>
+        <a href="tel:4075507077" class="btn btn-ghost btn-lg">(407) 550-7077</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="name">Caring Heart</div>
+          <div class="tagline">Family Nurse Practitioner</div>
+          <p>Compassionate, personalized primary care for Central Florida families — in the office or in the comfort of your home.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../home/">Home</a></li>
+            <li><a href="../services/">Services Available</a></li>
+            <li><a href="../appointment/">Make an Appointment</a></li>
+            <li><a href="../patient-portal/">Patient Portal</a></li>
+            <li><a href="../contact/">Contact Us</a></li>
+            <li><a href="../about/">About Us</a></li>
+            <li><a href="../privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            Phone: <a href="tel:4075507077">(407) 550-7077</a><br><br>
+            Serving Central Florida<br><br>
+            <a href="../appointment/">Book an Appointment →</a>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year"></span> Caring Heart Family Nurse Practitioner. All rights reserved.</span>
+        <a href="../privacy-policy/">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="../assets/js/global.js"></script>
+
+</body>
+</html>
