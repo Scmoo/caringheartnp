@@ -23,6 +23,10 @@
      ★  SITE CONFIG — edit this section to update site-wide
      ══════════════════════════════════════════════════════════ */
 
+  // ── GitHub Pages subdirectory base path ──────────────────
+  // If your site moves to a custom domain at the root, set this to ''.
+  const BASE_PATH = '/caringheartnp';
+
   const SITE_CONFIG = {
     // Swap this to a local path once you have your logo saved, e.g. '/assets/img/logo.png'
     logoSrc:    'https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png',
@@ -36,17 +40,17 @@
   /* ──────────────────────────────────────────────────────────
      NAV LINKS
      label : text shown in the nav bar
-     href  : destination (root-relative, e.g. /services/)
+     href  : site-relative path, e.g. /home/  (BASE_PATH is prepended automatically)
      cta   : true = styled as the red pill button on the right
   ────────────────────────────────────────────────────────── */
   const NAV_LINKS = [
     { label: 'Home',                href: '/home/' },
-    { label: 'Services Available',  href: '/caringheartnp/services/' },
+    { label: 'Services Available',  href: '/services/' },
     { label: 'Patient Portal',      href: '/patient-portal/' },
     { label: 'Contact Us',          href: '/contact/' },
     { label: 'About Us',            href: '/about/' },
     { label: 'Privacy Policy',      href: '/privacy-policy/' },
-    { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', cta: true, target: '_blank' },
+    { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', cta: true, target: '_blank', external: true },
   ];
 
   /* ──────────────────────────────────────────────────────────
@@ -67,6 +71,13 @@
     address: 'Serving the Palm Coast, Florida region',
   };
 
+  // Prepend BASE_PATH to any href that doesn't start with http/https/#/mailto/tel
+  function resolveHref(href) {
+    if (!href) return href;
+    if (/^(https?:|mailto:|tel:|#)/.test(href)) return href;
+    return BASE_PATH + href;
+  }
+
   /* ══════════════════════════════════════════════════════════
      NAV INJECTION
      Looks for <div id="site-nav-placeholder"></div> in each
@@ -78,7 +89,8 @@
 
     const linkItems = NAV_LINKS.map(link => {
       const cls = link.cta ? 'nav-cta' : '';
-      return `<li><a href="${link.href}"${cls ? ` class="${cls}"` : ''}>${link.label}</a></li>`;
+      const target = link.target ? ` target="${link.target}"` : '';
+      return `<li><a href="${resolveHref(link.href)}"${cls ? ` class="${cls}"` : ''}${target}>${link.label}</a></li>`;
     }).join('\n            ');
 
     placeholder.outerHTML = `
@@ -91,7 +103,7 @@
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="container nav-inner">
 
-    <a href="/home/" class="nav-logo" aria-label="${SITE_CONFIG.siteName} — Home">
+    <a href="${resolveHref('/home/')}" class="nav-logo" aria-label="${SITE_CONFIG.siteName} — Home">
       <img src="${SITE_CONFIG.logoSrc}" alt="${SITE_CONFIG.logoAlt}">
       <div class="nav-logo-text">
         <span class="name">${SITE_CONFIG.siteName}</span>
@@ -120,7 +132,7 @@
     if (!placeholder) return;
 
     const footerNavItems = FOOTER_CONFIG.navLinks.map(link =>
-      `<li><a href="${link.href}">${link.label}</a></li>`
+      `<li><a href="${resolveHref(link.href)}">${link.label}</a></li>`
     ).join('\n            ');
 
     placeholder.outerHTML = `
@@ -144,7 +156,7 @@
         <address>
           Phone: <a href="tel:${SITE_CONFIG.phoneTel}">${SITE_CONFIG.phone}</a><br><br>
           ${FOOTER_CONFIG.address}<br><br>
-          <a href="/appointment/">Book an Appointment &rarr;</a>
+          <a href="${resolveHref('/appointment/')}">Book an Appointment &rarr;</a>
         </address>
       </div>
 
@@ -163,12 +175,19 @@
      ══════════════════════════════════════════════════════════ */
   function setActiveNav() {
     const currentPath = window.location.pathname.replace(/\/$/, '');
+    // Strip the base path so we can compare against the short hrefs in NAV_LINKS
+    const strippedPath = currentPath.startsWith(BASE_PATH)
+      ? currentPath.slice(BASE_PATH.length)
+      : currentPath;
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.classList.remove('active');
       const href = link.getAttribute('href');
-      if (!href) return;
-      const linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '');
-      if (linkPath === currentPath || (currentPath === '' && linkPath === '/home')) {
+      if (!href || /^(https?:|mailto:|tel:)/.test(href)) return;
+      // Strip base path from the link href too before comparing
+      const linkPath = href.startsWith(BASE_PATH)
+        ? href.slice(BASE_PATH.length).replace(/\/$/, '')
+        : new URL(href, window.location.origin).pathname.replace(/\/$/, '');
+      if (linkPath === strippedPath || (strippedPath === '' && linkPath === '/home')) {
         link.classList.add('active');
       }
     });
