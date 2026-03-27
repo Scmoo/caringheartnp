@@ -55,15 +55,6 @@
   ────────────────────────────────────────────────────────── */
   const FOOTER_CONFIG = {
     blurb: 'Compassionate, personalized primary care for Palm Coast, Florida families — in the office or in the comfort of your home.',
-    navLinks: [
-      { label: 'Home',                href: '/home/' },
-      { label: 'Services Available',  href: '/services/' },
-      { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', external: true },
-      { label: 'Patient Portal',      href: '/patient-portal/' },
-      { label: 'Contact Us',          href: '/contact/' },
-      { label: 'About Us',            href: '/about/' },
-      { label: 'Privacy Policy',      href: '/privacy-policy/' },
-    ],
     address: 'Serving the Palm Coast, Florida region',
   };
 
