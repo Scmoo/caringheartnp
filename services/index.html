@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caring Heart Family Nurse Practitioner offers primary care, home visits, telehealth, wound care, procedures, and assisted living facility visits in Palm Coast, Florida.">
+  <title>Services Available | Caring Heart Family Nurse Practitioner</title>
+
+  <link rel="icon" href="https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png" type="image/png">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+
+  <style>
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--color-crimson-dark) 0%, var(--color-crimson) 55%, #8E2B14 100%);
+      padding-block: 72px 80px;
+      text-align: center;
+      color: var(--color-white);
+      overflow: hidden;
+    }
+
+    /* Subtle texture overlay */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero .section-eyebrow {
+      color: var(--color-gold-light);
+    }
+
+    .page-hero h1 {
+      color: var(--color-white);
+      margin-top: 8px;
+    }
+
+    .page-hero p {
+      color: rgba(255,255,255,0.82);
+      margin-inline: auto;
+      margin-top: 14px;
+      font-size: 1.05rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* ── Insurance Check Banner ── */
+    .insurance-banner {
+      background: var(--color-gold);
+      color: var(--color-white);
+      text-align: center;
+      padding: 14px 24px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .insurance-banner a {
+      color: var(--color-white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .insurance-banner a:hover {
+      opacity: 0.85;
+    }
+
+    /* ── Intro Section ── */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .intro-img {
+      position: relative;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      aspect-ratio: 3/2;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .intro-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Accent frame behind image */
+    .intro-img::before {
+      content: '';
+      position: absolute;
+      inset: -14px -14px 14px 14px;
+      z-index: -1;
+      border-radius: var(--border-radius-lg);
+      border: 2px solid var(--color-gold);
+      opacity: 0.3;
+    }
+
+    .intro-text p {
+      color: var(--color-gray-600);
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    /* Visit type pills */
+    .visit-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .visit-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      border: 1.5px solid var(--color-gray-200);
+      color: var(--color-gray-800);
+      background: var(--color-white);
+    }
+
+    .visit-pill svg {
+      color: var(--color-crimson);
+    }
+
+    /* ── Service Cards Grid ── */
+    .services-section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card-img {
+      height: 200px;
+      overflow: hidden;
+      background: var(--color-gray-100);
+      position: relative;
+    }
+
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover .service-card-img img {
+      transform: scale(1.05);
+    }
+
+    /* Placeholder style for images not yet added */
+    .service-card-img.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--color-gray-100), var(--color-gray-200));
+    }
+
+    .service-card-img.placeholder svg {
+      color: var(--color-gray-400);
+      opacity: 0.6;
+    }
+
+    .service-card-img .img-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--color-crimson);
+      color: var(--color-white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .service-card-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--color-gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .service-icon svg {
+      color: var(--color-crimson);
+    }
+
+    .service-card-body h3 {
+      font-size: 1.2rem;
+      color: var(--color-gray-800);
+      margin: 0;
+    }
+
+    .service-card-body p {
+      font-size: 0.92rem;
+      color: var(--color-gray-600);
+      line-height: 1.75;
+      margin-top: 12px;
+      flex: 1;
+    }
+
+    /* ── Procedures & Tests ── */
+    .procedures-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .procedures-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .proc-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--color-gray-700, #4a4240);
+      font-weight: 500;
+    }
+
+    .proc-item::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-crimson), var(--color-gold));
+      flex-shrink: 0;
+    }
+
+    .procedures-img {
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+      background: var(--color-gray-100);
+    }
+
+    .procedures-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── ALF Section ── */
+    .alf-card {
+      background: linear-gradient(135deg, var(--color-crimson-dark) 0%, var(--color-crimson) 100%);
+      border-radius: var(--border-radius-lg);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      color: var(--color-white);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .alf-card::before {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .alf-card::after {
+      content: '';
+      position: absolute;
+      right: 60px;
+      bottom: -60px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .alf-text h3 {
+      color: var(--color-white);
+      font-size: 1.6rem;
+    }
+
+    .alf-text .divider {
+      background: linear-gradient(90deg, var(--color-gold-light), rgba(255,255,255,0.3));
+      margin-block: 16px;
+    }
+
+    .alf-text p {
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-top: 0;
+    }
+
+    .alf-text .service-areas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .area-tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--color-white);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+    }
+
+    .alf-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-white {
+      background: var(--color-white);
+      color: var(--color-crimson);
+      font-weight: 600;
+    }
+
+    .btn-white:hover {
+      background: var(--color-off-white);
+    }
+
+    /* ── Insurance Section ── */
+    .insurance-section {
+      background: var(--color-off-white);
+    }
+
+    .insurance-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .insurance-intro-text p {
+      color: var(--color-gray-600);
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .insurance-intro-text .contact-note {
+      margin-top: 24px;
+      padding: 20px;
+      background: var(--color-white);
+      border-left: 4px solid var(--color-crimson);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      font-size: 0.9rem;
+      color: var(--color-gray-600);
+    }
+
+    .insurance-intro-text .contact-note strong {
+      color: var(--color-gray-800);
+    }
+
+    .insurance-logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .insurer-card {
+      background: var(--color-white);
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-gray-800);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .insurer-card:hover {
+      border-color: var(--color-crimson);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .insurer-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--color-gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .insurer-icon svg {
+      color: var(--color-crimson);
+    }
+
+    .insurance-note {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--color-gray-600);
+      font-style: italic;
+    }
+
+    /* ── Hours & Location ── */
+    .hours-location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .info-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 36px;
+    }
+
+    .info-card h3 {
+      font-size: 1.3rem;
+      color: var(--color-gray-800);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-card h3 svg {
+      color: var(--color-crimson);
+    }
+
+    .info-card .divider {
+      margin-block: 16px;
+    }
+
+    .hours-table {
+      width: 100%;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-gray-100);
+      font-size: 0.9rem;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-row .day {
+      color: var(--color-gray-600);
+      font-weight: 500;
+    }
+
+    .hours-row .time {
+      color: var(--color-gray-800);
+      font-weight: 600;
+    }
+
+    .hours-row .time.closed {
+      color: var(--color-gray-400);
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-gray-100);
+      font-size: 0.9rem;
+    }
+
+    .contact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .contact-list svg {
+      color: var(--color-crimson);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-list .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-gray-400);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .contact-list a {
+      color: var(--color-gray-800);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .contact-list a:hover {
+      color: var(--color-crimson);
+    }
+
+    /* ── CTA Strip ── */
+    .cta-strip {
+      background: var(--color-gray-800);
+      padding-block: 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,28,46,0.15) 0%, transparent 70%);
+    }
+
+    .cta-strip h2 {
+      color: var(--color-white);
+      position: relative;
+    }
+
+    .cta-strip p {
+      color: var(--color-gray-400);
+      margin-inline: auto;
+      margin-top: 12px;
+      position: relative;
+    }
+
+    .cta-strip .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      position: relative;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .intro-grid,
+      .procedures-grid,
+      .hours-location-grid,
+      .insurance-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-img {
+        aspect-ratio: 16/9;
+      }
+
+      .service-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .alf-card {
+        grid-template-columns: 1fr;
+        padding: 32px;
+      }
+
+      .alf-cta {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .insurance-logos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .procedures-list {
+        grid-template-columns: 1fr;
+      }
+
+      .visit-types {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav injected by global.js -->
+  <div id="site-nav-placeholder"></div>
+
+  <!-- ─── Page Hero ─── -->
+  <section class="page-hero" aria-label="Services page header">
+    <div class="container page-hero-content">
+      <p class="section-eyebrow animate-fade-up">What We Offer</p>
+      <h1 class="animate-fade-up-delay-1">Services Available</h1>
+      <p class="animate-fade-up-delay-2">Comprehensive, compassionate primary care for Palm Coast, Florida families —<br>in our office, in your home, or online.</p>
+      <div class="hero-cta-group animate-fade-up-delay-3">
+        <a href="https://app.elationemr.com/book/caringheart" target="_blank" class="btn btn-gold btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Make an Appointment
+        </a>
+        <a href="tel:4075507077" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (407) 550-7077
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Insurance Check Banner ─── -->
+  <div class="insurance-banner">
+    <strong>Wondering if we accept your insurance?</strong>
+    <a href="#insurance">Click here to see our accepted PPO plans &darr;</a>
+  </div>
+
+  <!-- ─── Intro / What We Treat ─── -->
+  <section class="section" aria-labelledby="intro-heading">
+    <div class="container">
+      <div class="intro-grid">
+
+        <div class="intro-img reveal">
+          <!--
+            PHOTO PLACEHOLDER
+            Save your image to: /services/images/care-intro.jpg
+            Recommended: A warm photo of provider with patient in office
+          -->
+          <img
+            src="https://static.wixstatic.com/media/11062b_5378fadb66ef46078a6418d3aaf7f0cf~mv2_d_6540_4365_s_4_2.jpg"
+            alt="Caring Heart provider with patient"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="intro-text reveal reveal-delay-2">
+          <p class="section-eyebrow">Primary Patient Care</p>
+          <h2 id="intro-heading" class="section-title">Care That Comes to You</h2>
+          <div class="divider"></div>
+          <p>At Caring Heart, we meet you where you are. Whether you're walking into our clinic, need care at home, or just need a quick solution on the go — we have a visit type that works for your life.</p>
+
+          <div class="visit-types">
+            <div class="visit-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              Office Visits
+            </div>
+            <div class="visit-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Home Visits
+            </div>
+            <div class="visit-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Telehealth
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">We provide ideal, affordable management of medications, specialist referrals, and ongoing chronic disease care — all under one caring roof.</p>
+          <a href="https://app.elationemr.com/book/caringheart" target="_blank" class="btn btn-primary mt-6">Schedule an Appointment</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Service Cards ─── -->
+  <section class="section section--alt" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="services-section-title reveal">
+        <p class="section-eyebrow">Our Specialties</p>
+        <h2 id="services-heading" class="section-title">How We Can Help</h2>
+        <div class="divider divider--center"></div>
+        <p class="section-subtitle">From routine check-ups to specialized wound care, we offer a full range of primary care services tailored to your needs.</p>
+      </div>
+
+      <div class="service-cards">
+
+        <!-- Office Visits -->
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <!--
+              PHOTO PLACEHOLDER
+              Save to: /services/images/office-visit.jpg
+              Recommended: Clean, bright clinic interior or provider at desk
+            -->
+            <img
+              src="https://static.wixstatic.com/media/11062b_2262cd0dc85f433db868fd20161fff4b~mv2.jpg"
+              alt="Office visit at Caring Heart clinic"
+              loading="lazy"
+            >
+            <span class="img-badge">In-Person</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon-row">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <h3>Office Visits</h3>
+            </div>
+            <p>Ideal for affordable management of medications, specialists, and referrals. Walk into our Palm Coast clinic for comprehensive primary care in a warm, welcoming environment.</p>
+          </div>
+        </div>
+
+        <!-- Home Visits -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-card-img">
+            <!--
+              PHOTO PLACEHOLDER
+              Save to: /services/images/home-visit.jpg
+              Recommended: Provider visiting patient at home, warm and personal feel
+            -->
+            <img
+              src="https://static.wixstatic.com/media/11062b_6b48b28f794b425eab23eaf5734a8e41~mv2.jpeg"
+              alt="Caring Heart provider on a home visit"
+              loading="lazy"
+            >
+            <span class="img-badge">Home Visit</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon-row">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3>Home &amp; Bedbound Visits</h3>
+            </div>
+            <p>For those unable to travel to our clinic who still benefit from a face-to-face appointment. We bring comprehensive care directly to the comfort and safety of your home.</p>
+          </div>
+        </div>
+
+        <!-- Telehealth -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-card-img placeholder">
+            <!--
+              PHOTO PLACEHOLDER
+              Save to: /services/images/telehealth.jpg
+              Recommended: Person on video call with doctor, or laptop/phone showing virtual visit
+              Replace the placeholder below with an <img> tag once you have the image.
+            -->
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span class="img-badge">Virtual</span>
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon-row">
+              <div class="service-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3>Telehealth</h3>
+            </div>
+            <p>For patients "On The Go" who need a quick, simple solution for their condition. Connect with your provider virtually — from home, work, or anywhere that's convenient.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Procedures & Tests ─── -->
+  <section class="section" aria-labelledby="procedures-heading">
+    <div class="container">
+      <div class="procedures-grid">
+
+        <div class="reveal">
+          <p class="section-eyebrow">In-Clinic</p>
+          <h2 id="procedures-heading" class="section-title">Procedures &amp; Tests</h2>
+          <div class="divider"></div>
+          <p style="color:var(--color-gray-600); margin-top:16px; line-height:1.8;">We offer a range of cognitive and physical tests and in-office procedures so you can get results and treatment all in one place.</p>
+
+          <div class="procedures-list">
+            <div class="proc-item">Depression Screenings</div>
+            <div class="proc-item">Anxiety Screenings</div>
+            <div class="proc-item">EKGs</div>
+            <div class="proc-item">Pap Smears</div>
+            <div class="proc-item">Cognitive Testing</div>
+            <div class="proc-item">Physical Exams</div>
+            <div class="proc-item">Lab Referrals</div>
+            <div class="proc-item">Chronic Disease Management</div>
+            <div class="proc-item">Medication Management</div>
+            <div class="proc-item">Specialist Referrals</div>
+          </div>
+
+          <a href="https://app.elationemr.com/book/caringheart" target="_blank" class="btn btn-secondary mt-8">Book a Procedure Visit</a>
+        </div>
+
+        <div class="procedures-img reveal reveal-delay-2">
+          <!--
+            PHOTO PLACEHOLDER
+            Save to: /services/images/procedures.jpg
+            Recommended: Clinical/medical setting, EKG machine, or exam room
+          -->
+          <img
+            src="https://static.wixstatic.com/media/a3267d_505f3066874c4f92ba1c3690d92d11fa~mv2.jpg"
+            alt="Medical procedures and testing at Caring Heart"
+            loading="lazy"
+            style="width:100%; height:100%; object-fit:cover;"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Chronic Wound Care ─── -->
+  <section class="section section--alt" aria-labelledby="wound-heading">
+    <div class="container">
+      <div class="procedures-grid" style="direction: rtl;">
+
+        <div class="reveal" style="direction: ltr;">
+          <p class="section-eyebrow">Specialized Care</p>
+          <h2 id="wound-heading" class="section-title">Chronic Wound Care</h2>
+          <div class="divider"></div>
+          <p style="color:var(--color-gray-600); margin-top:16px; line-height:1.8;">We specialize in treating patients with wounds lasting 30 or more days with no signs of healing. Our experienced team provides expert wound assessment, treatment, and follow-up care.</p>
+          <p style="color:var(--color-gray-600); margin-top:12px; line-height:1.8;">Services include wound debridement, dressing changes, infection management, and coordination with specialists when needed.</p>
+          <a href="https://app.elationemr.com/book/caringheart" target="_blank" class="btn btn-primary mt-8">Schedule a Wound Care Visit</a>
+        </div>
+
+        <div class="procedures-img reveal reveal-delay-2" style="direction: ltr;">
+          <!--
+            PHOTO PLACEHOLDER
+            Save to: /services/images/wound-care.jpg
+            Recommended: Provider performing wound assessment, or bandaging — professional and clinical
+          -->
+          <img
+            src="https://static.wixstatic.com/media/a3267d_5b90aa45283b40da9894cdc9d4c32ee1~mv2.jpg"
+            alt="Wound care services at Caring Heart"
+            loading="lazy"
+            style="width:100%; height:100%; object-fit:cover;"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ALF & Rehab Facilities ─── -->
+  <section class="section" aria-labelledby="alf-heading">
+    <div class="container">
+      <div class="alf-card reveal">
+        <div class="alf-text">
+          <p class="section-eyebrow" style="color:var(--color-gold-light);">Facility Partnerships</p>
+          <h3 id="alf-heading">Assisted Living Facilities &amp; Rehabs</h3>
+          <div class="divider"></div>
+          <p>Caring Heart has openings for ALFs and Rehab facilities in need of regular provider visits in the Flagler and Volusia County area. We work directly with your facility to coordinate recurring scheduled visits for your residents.</p>
+          <p style="margin-top: 12px;">Please reach out to coordinate a recurring visit schedule that works best for your facility.</p>
+
+          <div class="service-areas">
+            <span class="area-tag">Flagler County</span>
+            <span class="area-tag">Volusia County</span>
+            <span class="area-tag">Palm Coast</span>
+            <span class="area-tag">Bunnell</span>
+          </div>
+        </div>
+
+        <div class="alf-cta">
+          <a href="mailto:caringheartnp@gmail.com" class="btn btn-white btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            Contact Us
+          </a>
+          <a href="tel:3862254490" class="btn btn-ghost btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (386) 225-4490
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Insurance ─── -->
+  <section class="section insurance-section" id="insurance" aria-labelledby="insurance-heading">
+    <div class="container">
+      <div class="insurance-intro">
+
+        <div class="insurance-intro-text reveal">
+          <p class="section-eyebrow">Accepted Plans</p>
+          <h2 id="insurance-heading" class="section-title">Our Insurances (PPO)</h2>
+          <div class="divider"></div>
+          <p>Our team will be happy to set up your patient chart with Caring Heart and schedule your first appointment. We accept the following PPO insurance plans — if you don't see yours listed, give us a call and we'll help figure it out.</p>
+
+          <div class="contact-note">
+            <strong>Not sure if we take your plan?</strong><br>
+            Call our office at <a href="tel:3862254490" style="color:var(--color-crimson); font-weight:600;">(386) 225-4490</a> and we'll verify your coverage before your visit.
+          </div>
+
+          <p class="insurance-note">* Plan availability may change. Please confirm at time of scheduling.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="insurance-logos">
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              Medicare
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              Medicaid
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              Cigna
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              Aetna
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              Humana
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              Florida Blue
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              United Health
+            </div>
+            <div class="insurer-card">
+              <div class="insurer-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              &amp; More PPO Plans
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Hours & Contact ─── -->
+  <section class="section" aria-labelledby="hours-heading">
+    <div class="container">
+      <div class="text-center mb-6 reveal">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 id="hours-heading" class="section-title">Hours &amp; Contact</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="hours-location-grid">
+
+        <!-- Hours -->
+        <div class="info-card reveal">
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Office Hours
+          </h3>
+          <div class="divider"></div>
+          <div class="hours-table">
+            <div class="hours-row">
+              <span class="day">Monday – Friday</span>
+              <span class="time">9:00 AM – 5:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Saturday</span>
+              <span class="time closed">Closed</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Sunday</span>
+              <span class="time closed">Closed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="info-card reveal reveal-delay-2">
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Contact Info
+          </h3>
+          <div class="divider"></div>
+          <ul class="contact-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <span class="label">Appointments</span>
+                <a href="tel:4075507077">(407) 550-7077</a>
+              </div>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <span class="label">Office</span>
+                <a href="tel:3862254490">(386) 225-4490</a>
+              </div>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+              <div>
+                <span class="label">Fax</span>
+                <span style="color:var(--color-gray-800); font-weight:500;">(386) 877-2006</span>
+              </div>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <span class="label">Address</span>
+                <a href="https://maps.google.com/?q=21+Old+Kings+Rd+N+Unit+108+Palm+Coast+FL+32137" target="_blank" rel="noopener">
+                  21 Old Kings Rd N, Unit 108<br>Palm Coast, FL 32137
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Strip ─── -->
+  <section class="cta-strip" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading" class="reveal">Ready to Get Started?</h2>
+      <p class="reveal reveal-delay-1">Join the Caring Heart family — schedule online or give us a call today.</p>
+      <div class="cta-buttons reveal reveal-delay-2">
+        <a href="https://app.elationemr.com/book/caringheart" target="_blank" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Schedule Online
+        </a>
+        <a href="tel:4075507077" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (407) 550-7077
+        </a>
+        <a href="mailto:caringheartnp@gmail.com" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Email Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by global.js -->
+  <div id="site-footer-placeholder"></div>
+
+  <!-- Global JS -->
+  <script src="../assets/js/global.js"></script>
+
+</body>
+</html>
