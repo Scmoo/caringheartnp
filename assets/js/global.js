@@ -41,7 +41,7 @@
   ────────────────────────────────────────────────────────── */
   const NAV_LINKS = [
     { label: 'Home',                href: '/home/' },
-    { label: 'Services Available',  href: '/services/' },
+    { label: 'Services Available',  href: '/caringheartnp/services/' },
     { label: 'Patient Portal',      href: '/patient-portal/' },
     { label: 'Contact Us',          href: '/contact/' },
     { label: 'About Us',            href: '/about/' },
