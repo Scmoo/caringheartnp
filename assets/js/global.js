@@ -46,7 +46,7 @@
   const NAV_LINKS = [
     { label: 'Home',                href: '/home/' },
     { label: 'Services Available',  href: '/services/' },
-    { label: 'Patient Portal',      href: 'https://app.elationpassport.com/passport/login/', external: true },
+    { label: 'Patient Portal',      href: 'https://app.elationpassport.com/passport/login/', target: '_blank', external: true },
     { label: 'Our Team',            href: '/our-team/' },
     { label: 'Privacy Policy',      href: '/privacy-policy/' },
     { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', cta: true, target: '_blank', external: true },
@@ -61,8 +61,8 @@
     navLinks: [
       { label: 'Home',                href: '/home/' },
       { label: 'Services Available',  href: '/services/' },
-      { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', external: true },
-      { label: 'Patient Portal',      href: 'https://app.elationpassport.com/passport/login/', external: true },
+      { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', target: '_blank', external: true },
+      { label: 'Patient Portal',      href: 'https://app.elationpassport.com/passport/login/', target: '_blank', external: true },
       { label: 'Our Team',            href: '/our-team/' },
       { label: 'Privacy Policy',      href: '/privacy-policy/' },
     ],
