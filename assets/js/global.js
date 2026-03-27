@@ -1,29 +1,184 @@
 /* ============================================================
    CARING HEART FAMILY NURSE PRACTITIONER — Global JavaScript
+   ============================================================
+   EDIT GUIDE:
+   ┌─ NAV LINKS ──────────────────────────────────────────────┐
+   │  Edit the NAV_LINKS array below.                         │
+   │  Each item: { label, href, cta: true/false }             │
+   │  cta: true  → renders as the red pill "Make Appt" button │
+   └──────────────────────────────────────────────────────────┘
+   ┌─ FOOTER ─────────────────────────────────────────────────┐
+   │  Edit FOOTER_CONFIG below.                               │
+   │  Change phone, address, tagline, nav links etc.          │
+   └──────────────────────────────────────────────────────────┘
+   ┌─ LOGO / SITE NAME ───────────────────────────────────────┐
+   │  Edit SITE_CONFIG below.                                 │
+   └──────────────────────────────────────────────────────────┘
    ============================================================ */
 
 (function () {
   'use strict';
 
-  // ── Active Nav Link ─────────────────────────────────────────
+  /* ══════════════════════════════════════════════════════════
+     ★  SITE CONFIG — edit this section to update site-wide
+     ══════════════════════════════════════════════════════════ */
+
+  const SITE_CONFIG = {
+    // Swap this to a local path once you have your logo saved, e.g. '/assets/img/logo.png'
+    logoSrc:    'https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png',
+    logoAlt:    'Caring Heart FNP Logo',
+    siteName:   'Caring Heart',
+    siteTagline:'Family Nurse Practitioner',
+    phone:      '(407) 550-7077',
+    phoneTel:   '4075507077',
+  };
+
+  /* ──────────────────────────────────────────────────────────
+     NAV LINKS
+     label : text shown in the nav bar
+     href  : destination (root-relative, e.g. /services/)
+     cta   : true = styled as the red pill button on the right
+  ────────────────────────────────────────────────────────── */
+  const NAV_LINKS = [
+    { label: 'Home',                href: '/home/' },
+    { label: 'Services Available',  href: '/services/' },
+    { label: 'Patient Portal',      href: '/patient-portal/' },
+    { label: 'Contact Us',          href: '/contact/' },
+    { label: 'About Us',            href: '/about/' },
+    { label: 'Privacy Policy',      href: '/privacy-policy/' },
+    { label: 'Make an Appointment', href: '/appointment/', cta: true },
+  ];
+
+  /* ──────────────────────────────────────────────────────────
+     FOOTER CONFIG
+     navLinks mirrors NAV_LINKS but you can trim / reorder
+  ────────────────────────────────────────────────────────── */
+  const FOOTER_CONFIG = {
+    blurb: 'Compassionate, personalized primary care for Central Florida families — in the office or in the comfort of your home.',
+    navLinks: [
+      { label: 'Home',                href: '/home/' },
+      { label: 'Services Available',  href: '/services/' },
+      { label: 'Make an Appointment', href: '/appointment/' },
+      { label: 'Patient Portal',      href: '/patient-portal/' },
+      { label: 'Contact Us',          href: '/contact/' },
+      { label: 'About Us',            href: '/about/' },
+      { label: 'Privacy Policy',      href: '/privacy-policy/' },
+    ],
+    address: 'Serving Central Florida',
+  };
+
+  /* ══════════════════════════════════════════════════════════
+     NAV INJECTION
+     Looks for <div id="site-nav-placeholder"></div> in each
+     page and replaces it with the full header HTML.
+     ══════════════════════════════════════════════════════════ */
+  function buildNav() {
+    const placeholder = document.getElementById('site-nav-placeholder');
+    if (!placeholder) return;
+
+    const linkItems = NAV_LINKS.map(link => {
+      const cls = link.cta ? 'nav-cta' : '';
+      return `<li><a href="${link.href}"${cls ? ` class="${cls}"` : ''}>${link.label}</a></li>`;
+    }).join('\n            ');
+
+    placeholder.outerHTML = `
+<div class="emergency-bar">
+  <strong>Medical Emergency?</strong> Call <strong>911</strong> immediately.
+  For appointments call
+  <a href="tel:${SITE_CONFIG.phoneTel}" style="color:var(--color-gold-light);font-weight:600;">${SITE_CONFIG.phone}</a>
+</div>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+
+    <a href="/home/" class="nav-logo" aria-label="${SITE_CONFIG.siteName} — Home">
+      <img src="${SITE_CONFIG.logoSrc}" alt="${SITE_CONFIG.logoAlt}">
+      <div class="nav-logo-text">
+        <span class="name">${SITE_CONFIG.siteName}</span>
+        <span class="tagline">${SITE_CONFIG.siteTagline}</span>
+      </div>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" role="list">
+      ${linkItems}
+    </ul>
+
+  </div>
+</nav>`;
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     FOOTER INJECTION
+     Looks for <div id="site-footer-placeholder"></div>
+     ══════════════════════════════════════════════════════════ */
+  function buildFooter() {
+    const placeholder = document.getElementById('site-footer-placeholder');
+    if (!placeholder) return;
+
+    const footerNavItems = FOOTER_CONFIG.navLinks.map(link =>
+      `<li><a href="${link.href}">${link.label}</a></li>`
+    ).join('\n            ');
+
+    placeholder.outerHTML = `
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="name">${SITE_CONFIG.siteName}</div>
+        <div class="tagline">${SITE_CONFIG.siteTagline}</div>
+        <p>${FOOTER_CONFIG.blurb}</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>${footerNavItems}</ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Phone: <a href="tel:${SITE_CONFIG.phoneTel}">${SITE_CONFIG.phone}</a><br><br>
+          ${FOOTER_CONFIG.address}<br><br>
+          <a href="/appointment/">Book an Appointment &rarr;</a>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="footer-year"></span> ${SITE_CONFIG.siteName} ${SITE_CONFIG.siteTagline}. All rights reserved.</span>
+      <a href="/privacy-policy/">Privacy Policy</a>
+    </div>
+  </div>
+</footer>`;
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     ACTIVE NAV LINK — highlights the current page
+     ══════════════════════════════════════════════════════════ */
   function setActiveNav() {
-    const path = window.location.pathname;
+    const currentPath = window.location.pathname.replace(/\/$/, '');
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.classList.remove('active');
       const href = link.getAttribute('href');
       if (!href) return;
-      // Normalize both paths for comparison
       const linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '');
-      const currentPath = path.replace(/\/$/, '');
       if (linkPath === currentPath || (currentPath === '' && linkPath === '/home')) {
         link.classList.add('active');
       }
     });
   }
 
-  // ── Mobile Nav Toggle ───────────────────────────────────────
+  /* ══════════════════════════════════════════════════════════
+     MOBILE NAV TOGGLE
+     ══════════════════════════════════════════════════════════ */
   function initMobileNav() {
-    const toggle = document.querySelector('.nav-toggle');
+    const toggle   = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (!toggle || !navLinks) return;
 
@@ -33,7 +188,6 @@
       toggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when a nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -42,7 +196,6 @@
       });
     });
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
@@ -52,7 +205,9 @@
     });
   }
 
-  // ── Scroll Reveal (Intersection Observer) ───────────────────
+  /* ══════════════════════════════════════════════════════════
+     SCROLL REVEAL (Intersection Observer)
+     ══════════════════════════════════════════════════════════ */
   function initReveal() {
     const elements = document.querySelectorAll('.reveal');
     if (!elements.length) return;
@@ -69,11 +224,12 @@
     elements.forEach(el => observer.observe(el));
   }
 
-  // ── Sticky Nav Shadow on Scroll ─────────────────────────────
+  /* ══════════════════════════════════════════════════════════
+     NAV SHADOW ON SCROLL
+     ══════════════════════════════════════════════════════════ */
   function initNavScroll() {
     const nav = document.querySelector('.site-nav');
     if (!nav) return;
-
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 10
         ? '0 4px 24px rgba(46,40,38,0.14)'
@@ -81,7 +237,9 @@
     }, { passive: true });
   }
 
-  // ── Smooth Anchor Scrolling ──────────────────────────────────
+  /* ══════════════════════════════════════════════════════════
+     SMOOTH ANCHOR SCROLLING
+     ══════════════════════════════════════════════════════════ */
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -95,20 +253,26 @@
     });
   }
 
-  // ── Current Year in Footer ───────────────────────────────────
+  /* ══════════════════════════════════════════════════════════
+     FOOTER YEAR
+     ══════════════════════════════════════════════════════════ */
   function setFooterYear() {
     const el = document.getElementById('footer-year');
     if (el) el.textContent = new Date().getFullYear();
   }
 
-  // ── Init ────────────────────────────────────────────────────
+  /* ══════════════════════════════════════════════════════════
+     INIT — runs on every page load
+     ══════════════════════════════════════════════════════════ */
   document.addEventListener('DOMContentLoaded', () => {
-    setActiveNav();
-    initMobileNav();
-    initReveal();
-    initNavScroll();
-    initSmoothAnchors();
-    setFooterYear();
+    buildNav();          // ← inject header + emergency bar
+    buildFooter();       // ← inject footer
+    setActiveNav();      // ← highlight current page link
+    initMobileNav();     // ← hamburger toggle
+    initReveal();        // ← scroll fade-in animations
+    initNavScroll();     // ← nav shadow on scroll
+    initSmoothAnchors(); // ← smooth # anchor scrolling
+    setFooterYear();     // ← dynamic copyright year
   });
 
 })();
