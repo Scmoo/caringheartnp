@@ -26,7 +26,7 @@
   const SITE_CONFIG = {
     // Swap this to a local path once you have your logo saved, e.g. '/assets/img/logo.png'
     logoSrc:    'https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png',
-    logoAlt:    'Caring Heart FNP Logo',
+    logoAlt:    'Caring Heart Family Nurse Practitioner Logo',
     siteName:   'Caring Heart',
     siteTagline:'Family Nurse Practitioner',
     phone:      '(407) 550-7077',
@@ -46,7 +46,7 @@
     { label: 'Contact Us',          href: '/contact/' },
     { label: 'About Us',            href: '/about/' },
     { label: 'Privacy Policy',      href: '/privacy-policy/' },
-    { label: 'Make an Appointment', href: '/appointment/', cta: true },
+    { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', cta: true, target: '_blank' },
   ];
 
   /* ──────────────────────────────────────────────────────────
@@ -54,17 +54,17 @@
      navLinks mirrors NAV_LINKS but you can trim / reorder
   ────────────────────────────────────────────────────────── */
   const FOOTER_CONFIG = {
-    blurb: 'Compassionate, personalized primary care for Central Florida families — in the office or in the comfort of your home.',
+    blurb: 'Compassionate, personalized primary care for Palm Coast, Florida families — in the office or in the comfort of your home.',
     navLinks: [
       { label: 'Home',                href: '/home/' },
       { label: 'Services Available',  href: '/services/' },
-      { label: 'Make an Appointment', href: '/appointment/' },
+      { label: 'Make an Appointment', href: 'https://app.elationemr.com/book/caringheart', external: true },
       { label: 'Patient Portal',      href: '/patient-portal/' },
       { label: 'Contact Us',          href: '/contact/' },
       { label: 'About Us',            href: '/about/' },
       { label: 'Privacy Policy',      href: '/privacy-policy/' },
     ],
-    address: 'Serving Central Florida',
+    address: 'Serving the Palm Coast, Florida region',
   };
 
   /* ══════════════════════════════════════════════════════════
