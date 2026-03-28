@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for Caring Heart Family Nurse Practitioner — how we handle your personal information, SMS communications, and patient data in Palm Coast, Florida.">
+  <title>Privacy Policy | Caring Heart Family Nurse Practitioner</title>
+
+  <link rel="icon" href="https://static.wixstatic.com/media/a3267d_44c54a165a7044ec81f2a28ec9357a76%7Emv2.png" type="image/png">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+
+  <style>
+
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--color-crimson-dark) 0%, var(--color-crimson) 55%, #8E2B14 100%);
+      padding-block: 72px 80px;
+      text-align: center;
+      color: var(--color-white);
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero .section-eyebrow { color: var(--color-gold-light); }
+    .page-hero h1 { color: var(--color-white); margin-top: 8px; }
+    .page-hero .meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(6px);
+    }
+
+    .page-hero .meta svg { color: var(--color-gold-light); }
+
+    /* ── Layout: sidebar + content ── */
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── Sticky Table of Contents ── */
+    .toc {
+      position: sticky;
+      top: calc(var(--nav-height) + 24px);
+      background: var(--color-white);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .toc-header {
+      background: var(--color-gray-800);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toc-header svg { color: var(--color-gold-light); flex-shrink: 0; }
+
+    .toc-header span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gray-400);
+    }
+
+    .toc-list {
+      padding: 12px 0;
+    }
+
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 22px;
+      font-size: 0.84rem;
+      color: var(--color-gray-600);
+      font-weight: 500;
+      transition: color var(--transition), background var(--transition);
+      border-left: 3px solid transparent;
+    }
+
+    .toc-list a:hover {
+      color: var(--color-crimson);
+      background: var(--color-gray-100);
+    }
+
+    .toc-list a.active {
+      color: var(--color-crimson);
+      background: var(--color-gray-100);
+      border-left-color: var(--color-crimson);
+    }
+
+    .toc-list .toc-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      min-width: 18px;
+    }
+
+    /* ── Policy content ── */
+    .policy-content {
+      min-width: 0;
+    }
+
+    /* Highlight intro card */
+    .policy-intro-card {
+      background: var(--color-off-white);
+      border-left: 4px solid var(--color-crimson);
+      border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+
+    .policy-intro-card p {
+      font-size: 0.96rem;
+      color: var(--color-gray-600);
+      line-height: 1.85;
+      max-width: 100%;
+    }
+
+    .policy-intro-card p + p { margin-top: 12px; }
+
+    /* Section blocks */
+    .policy-section {
+      margin-bottom: 48px;
+      scroll-margin-top: calc(var(--nav-height) + 32px);
+    }
+
+    .policy-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+
+    .policy-section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--color-gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .policy-section-icon svg { color: var(--color-crimson); }
+
+    .policy-section-header h2 {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--color-gray-800);
+      margin: 0;
+    }
+
+    .policy-section-header .section-num {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--color-gold);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .policy-section p {
+      font-size: 0.93rem;
+      color: var(--color-gray-600);
+      line-height: 1.85;
+      max-width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    /* Highlighted callout box — for the key FCC statements */
+    .policy-callout {
+      background: var(--color-white);
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: var(--border-radius-lg);
+      padding: 24px 28px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .policy-callout--important {
+      border-color: var(--color-crimson);
+      background: #fdf8f8;
+    }
+
+    .policy-callout--note {
+      border-color: var(--color-gold);
+      background: #fdf9f2;
+    }
+
+    .callout-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-crimson);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .policy-callout--note .callout-label { color: var(--color-gold); }
+
+    .policy-callout p {
+      font-size: 0.92rem;
+      color: var(--color-gray-700, #4a4240);
+      line-height: 1.8;
+      margin: 0 !important;
+    }
+
+    /* Bullet list style */
+    .policy-list {
+      margin: 14px 0;
+      padding-left: 0;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--color-gray-100);
+      font-size: 0.92rem;
+      color: var(--color-gray-600);
+      line-height: 1.7;
+    }
+
+    .policy-list li:last-child { border-bottom: none; }
+
+    .policy-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-crimson), var(--color-gold));
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Contact card at bottom */
+    .policy-contact-card {
+      background: var(--color-gray-800);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .policy-contact-card svg {
+      color: var(--color-gold-light);
+      flex-shrink: 0;
+    }
+
+    .policy-contact-text { flex: 1; min-width: 200px; }
+
+    .policy-contact-text h3 {
+      font-size: 1rem;
+      color: var(--color-white);
+    }
+
+    .policy-contact-text p {
+      font-size: 0.88rem;
+      color: var(--color-gray-400);
+      margin-top: 6px;
+      max-width: 100%;
+    }
+
+    .policy-contact-text a {
+      color: var(--color-gold-light);
+      font-weight: 500;
+    }
+
+    .policy-contact-text a:hover { color: var(--color-white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .policy-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav injected by global.js -->
+  <div id="site-nav-placeholder"></div>
+
+  <!-- ─── Page Hero ─── -->
+  <section class="page-hero" aria-label="Privacy Policy header">
+    <div class="container page-hero-content">
+      <p class="section-eyebrow animate-fade-up">Legal &amp; Compliance</p>
+      <h1 class="animate-fade-up-delay-1">Privacy Policy</h1>
+      <div class="animate-fade-up-delay-2">
+        <span class="meta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Effective Date: January 1, 2025 &nbsp;&bull;&nbsp; Last Updated: March 2025
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Policy Body ─── -->
+  <section class="section">
+    <div class="container">
+      <div class="policy-layout">
+
+        <!-- Table of Contents -->
+        <aside class="toc reveal" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <span>Contents</span>
+          </div>
+          <nav class="toc-list" aria-label="Policy sections">
+            <a href="#overview"><span class="toc-num">01</span> Overview</a>
+            <a href="#sms-policy"><span class="toc-num">02</span> SMS &amp; Text Messaging</a>
+            <a href="#data-sharing"><span class="toc-num">03</span> Data Sharing &amp; Third Parties</a>
+            <a href="#information-we-collect"><span class="toc-num">04</span> Information We Collect</a>
+            <a href="#how-we-use"><span class="toc-num">05</span> How We Use Your Information</a>
+            <a href="#your-rights"><span class="toc-num">06</span> Your Rights &amp; Choices</a>
+            <a href="#security"><span class="toc-num">07</span> Data Security</a>
+            <a href="#hipaa"><span class="toc-num">08</span> HIPAA &amp; Health Information</a>
+            <a href="#changes"><span class="toc-num">09</span> Changes to This Policy</a>
+            <a href="#contact"><span class="toc-num">10</span> Contact Us</a>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="policy-content reveal reveal-delay-1">
+
+          <!-- Intro -->
+          <div class="policy-intro-card">
+            <p>Caring Heart Family Nurse Practitioner (&ldquo;Caring Heart,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting your privacy and handling your personal information with care and transparency. This Privacy Policy explains how we collect, use, share, and safeguard the information you provide when interacting with our practice, website, and communications.</p>
+            <p>By using our services, website, or opting into our communications, you agree to the terms described in this policy. This policy is intended to meet applicable requirements including the <strong>FCC&rsquo;s TCPA rules</strong> governing telephone and SMS communications.</p>
+          </div>
+
+          <!-- 01 Overview -->
+          <div class="policy-section" id="overview">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 01</span>
+                <h2>Overview</h2>
+              </div>
+            </div>
+            <p>Caring Heart Family Nurse Practitioner is a primary care practice located at 21 Old Kings Rd N, Unit 108, Palm Coast, FL 32137. We provide healthcare services including office visits, home visits, telehealth, wound care, and assisted living facility visits to patients in the Flagler and Volusia County area.</p>
+            <p>This policy applies to all information collected through our website, phone interactions, patient intake processes, appointment scheduling systems, and any electronic communications including SMS/text messaging.</p>
+          </div>
+
+          <!-- 02 SMS Policy (the core FCC content) -->
+          <div class="policy-section" id="sms-policy">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 02</span>
+                <h2>SMS &amp; Text Messaging Policy</h2>
+              </div>
+            </div>
+            <p>Caring Heart may use SMS (text message) communications to contact patients regarding appointment reminders, scheduling confirmations, general health information, and practice updates. Your participation in SMS communications is voluntary and requires your explicit consent.</p>
+
+            <div class="policy-callout policy-callout--important">
+              <div class="callout-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                FCC Compliance Statement
+              </div>
+              <p>No phone or mobile number information will be shared with third parties or affiliates for marketing or promotional purposes. All categories of data described in this policy exclude text messaging originator opt-in data and consent — this information will not be shared with any third parties.</p>
+            </div>
+
+            <div class="policy-callout policy-callout--note" style="margin-top: 16px;">
+              <div class="callout-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                SMS Data Sharing Notice
+              </div>
+              <p>We will not sell, share, or rent your SMS opt-in information to any third party for any reason other than to deliver the specific services associated with the campaign. However, we may share your personal data, including your SMS opt-in or consent status, with third parties that assist us in providing messaging services — such as platform providers, phone carriers, and other vendors involved in delivering text messages.</p>
+            </div>
+
+            <p style="margin-top: 20px;">To opt out of SMS communications from Caring Heart at any time, reply <strong>STOP</strong> to any text message. To re-subscribe, reply <strong>START</strong>. For assistance, reply <strong>HELP</strong> or contact our office directly.</p>
+          </div>
+
+          <!-- 03 Data Sharing -->
+          <div class="policy-section" id="data-sharing">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 03</span>
+                <h2>Data Sharing &amp; Third Parties</h2>
+              </div>
+            </div>
+            <p>We do not sell your personal information. We may share limited information with trusted third-party service providers only as necessary to operate our practice and deliver care. These parties are contractually obligated to protect your information and may not use it for any other purpose.</p>
+            <p>Third parties we may work with include:</p>
+            <ul class="policy-list">
+              <li>Electronic Health Record (EHR) and appointment scheduling platforms (e.g., Elation EMR)</li>
+              <li>SMS and VOIP telecommunications service providers for appointment communications</li>
+              <li>Medical billing partners (e.g., Accurate Billing LLC) for insurance and claims processing</li>
+              <li>Phone carriers and messaging infrastructure vendors involved in text message delivery</li>
+              <li>Government agencies or law enforcement when required by applicable law</li>
+            </ul>
+            <p>We never share your information with third parties for their own marketing or advertising purposes.</p>
+          </div>
+
+          <!-- 04 Information We Collect -->
+          <div class="policy-section" id="information-we-collect">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 04</span>
+                <h2>Information We Collect</h2>
+              </div>
+            </div>
+            <p>To provide you with care and communicate effectively, we may collect the following types of information:</p>
+            <ul class="policy-list">
+              <li><strong>Contact Information:</strong> name, phone number, email address, and mailing address</li>
+              <li><strong>Appointment &amp; Scheduling Data:</strong> preferred visit times, visit type (office, home, telehealth), and appointment history</li>
+              <li><strong>Insurance Information:</strong> insurance carrier, policy number, and coverage details for billing purposes</li>
+              <li><strong>Health Information:</strong> collected separately under our HIPAA-compliant Notice of Privacy Practices (see Section 08)</li>
+              <li><strong>Communications Data:</strong> records of SMS opt-in consent, phone call notes, and email correspondence</li>
+              <li><strong>Website Usage:</strong> basic analytics data if you visit our website (e.g., pages visited, browser type)</li>
+            </ul>
+          </div>
+
+          <!-- 05 How We Use -->
+          <div class="policy-section" id="how-we-use">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 05</span>
+                <h2>How We Use Your Information</h2>
+              </div>
+            </div>
+            <p>We use the information we collect for the following purposes:</p>
+            <ul class="policy-list">
+              <li>Scheduling, confirming, and managing your appointments</li>
+              <li>Sending appointment reminders and follow-up communications via phone, text, or email</li>
+              <li>Processing insurance claims and coordinating billing through our billing partners</li>
+              <li>Delivering telehealth or remote care services</li>
+              <li>Coordinating care with specialists, facilities, or other providers you have been referred to</li>
+              <li>Complying with legal obligations, including healthcare regulations and law enforcement requests</li>
+              <li>Improving our practice operations and communications</li>
+            </ul>
+            <p>We will only use your information for the purposes for which it was collected, or for closely related compatible purposes.</p>
+          </div>
+
+          <!-- 06 Your Rights -->
+          <div class="policy-section" id="your-rights">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 06</span>
+                <h2>Your Rights &amp; Choices</h2>
+              </div>
+            </div>
+            <p>You have the following rights with respect to your personal information:</p>
+            <ul class="policy-list">
+              <li><strong>Opt Out of SMS:</strong> Reply STOP to any text message at any time to stop receiving SMS communications from us</li>
+              <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+              <li><strong>Correction:</strong> Ask us to correct any inaccurate information</li>
+              <li><strong>Deletion:</strong> Request that we delete your information, subject to legal and healthcare record retention requirements</li>
+              <li><strong>Restriction:</strong> Ask us to limit how we use your data in certain circumstances</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us using the information in Section 10 below. We will respond to your request within a reasonable timeframe.</p>
+          </div>
+
+          <!-- 07 Security -->
+          <div class="policy-section" id="security">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 07</span>
+                <h2>Data Security</h2>
+              </div>
+            </div>
+            <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. These measures include secure data storage, restricted access controls, and use of HIPAA-compliant platforms for managing patient communications.</p>
+            <p>While we strive to protect your information, no method of electronic transmission or storage is 100% secure. We encourage you to contact us promptly if you believe your information may have been compromised.</p>
+          </div>
+
+          <!-- 08 HIPAA -->
+          <div class="policy-section" id="hipaa">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 08</span>
+                <h2>HIPAA &amp; Health Information</h2>
+              </div>
+            </div>
+            <p>As a healthcare provider, Caring Heart Family Nurse Practitioner is subject to the Health Insurance Portability and Accountability Act (HIPAA). Your protected health information (PHI) is governed by our separate <strong>Notice of Privacy Practices</strong>, which you will receive at your first visit or upon request.</p>
+            <p>Our Notice of Privacy Practices describes in detail how we use and disclose your medical information, your rights as a patient, and our legal obligations. This Privacy Policy is a supplement to — and does not replace — that notice.</p>
+            <p>If you have questions about how your health information is handled, please contact our office directly.</p>
+          </div>
+
+          <!-- 09 Changes -->
+          <div class="policy-section" id="changes">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.33"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 09</span>
+                <h2>Changes to This Policy</h2>
+              </div>
+            </div>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. When we make changes, we will update the &ldquo;Last Updated&rdquo; date at the top of this page.</p>
+            <p>We encourage you to review this policy periodically. Continued use of our services after any changes constitutes your acceptance of the revised policy. If you have questions about any changes, please contact us.</p>
+          </div>
+
+          <!-- 10 Contact -->
+          <div class="policy-section" id="contact">
+            <div class="policy-section-header">
+              <div class="policy-section-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+              </div>
+              <div>
+                <span class="section-num">Section 10</span>
+                <h2>Contact Us</h2>
+              </div>
+            </div>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how your information is handled, please contact us through any of the following:</p>
+
+            <div class="policy-contact-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div class="policy-contact-text">
+                <h3>Caring Heart Family Nurse Practitioner</h3>
+                <p>
+                  21 Old Kings Rd N, Unit 108, Palm Coast, FL 32137<br>
+                  Scheduling: <a href="tel:4075507077">(407) 550-7077</a> &nbsp;&bull;&nbsp;
+                  Office: <a href="tel:3862254490">(386) 225-4490</a> &nbsp;&bull;&nbsp;
+                  Fax: (386) 877-2006<br>
+                  Email: <a href="mailto:caringheartnp@gmail.com">caringheartnp@gmail.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end .policy-content -->
+      </div><!-- end .policy-layout -->
+    </div>
+  </section>
+
+  <!-- Footer injected by global.js -->
+  <div id="site-footer-placeholder"></div>
+
+  <!-- Global JS -->
+  <script src="../assets/js/global.js"></script>
+
+  <!-- ToC active-link highlight on scroll -->
+  <script>
+    (function () {
+      const sections = document.querySelectorAll('.policy-section');
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => {
+              link.classList.toggle(
+                'active',
+                link.getAttribute('href') === '#' + entry.target.id
+              );
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(s => observer.observe(s));
+    })();
+  </script>
+
+</body>
+</html>
