@@ -139,10 +139,16 @@
 
     /* Leadership row — 2 large cards */
     .team-leadership {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      justify-content: center;
       gap: 32px;
       margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .team-card--leader {
+      width: 340px;
+      flex-shrink: 0;
     }
 
     /* Staff row — up to 5 smaller cards */
@@ -176,7 +182,6 @@
 
     .team-card--leader .team-card-photo {
       aspect-ratio: 1 / 1;
-      max-height: 340px;
     }
 
     .team-card--staff .team-card-photo {
@@ -601,7 +606,8 @@
       }
 
       .team-leadership {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
       }
 
       .billing-card {
