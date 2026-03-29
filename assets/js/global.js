@@ -24,8 +24,9 @@
      ══════════════════════════════════════════════════════════ */
 
   // ── GitHub Pages subdirectory base path ──────────────────
-  // If your site moves to a custom domain at the root, set this to ''.
-  const BASE_PATH = '/caringheartnp';
+  // Empty string = custom domain at root (caringheartnp.com).
+  // If moved back to a GitHub Pages subdirectory, set to '/caringheartnp'.
+  const BASE_PATH = '';
 
   const SITE_CONFIG = {
     // Swap this to a local path once you have your logo saved, e.g. '/assets/img/logo.png'
