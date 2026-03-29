@@ -145,10 +145,10 @@
       margin-bottom: 32px;
     }
 
-    /* Staff row — up to 4 smaller cards */
+    /* Staff row — up to 5 smaller cards */
     .team-staff {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 24px;
     }
 
@@ -175,11 +175,11 @@
     }
 
     .team-card--leader .team-card-photo {
-      height: 300px;
+      aspect-ratio: 1 / 1;
     }
 
     .team-card--staff .team-card-photo {
-      height: 200px;
+      aspect-ratio: 1 / 1;
     }
 
     .team-card-photo img {
@@ -581,9 +581,15 @@
     }
 
     /* ── Responsive ── */
+    @media (max-width: 1200px) {
+      .team-staff {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 1024px) {
       .team-staff {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -609,7 +615,7 @@
 
     @media (max-width: 600px) {
       .team-staff {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .discipline-pills {
@@ -705,7 +711,7 @@
               This is the existing Wix photo for Evangeline — or swap with a new one.
             -->
             <img
-              src="https://static.wixstatic.com/media/a3267d_60fb30b5df304fe2b115f5acd73ba6ae~mv2.png/v1/crop/x_0,y_65,w_937,h_808/fill/w_434,h_386,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/file%20(1)_edited_edited.png"
+              src="images/gie.jpg"
               alt="Evangeline Diaz Butler, APRN FNP-BC"
               loading="lazy"
             >
@@ -725,7 +731,7 @@
               Save to: /our-team/images/carmen-millie-miranda.jpg
             -->
             <img
-              src="https://static.wixstatic.com/media/a3267d_7da0d79ea50246808bed27c9dd622943~mv2.png/v1/crop/x_0,y_16,w_1286,h_1255/fill/w_410,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_7348_PNG.png"
+              src="images/millie.jpg"
               alt="Carmen Millie Miranda, Clinical Director BSN"
               loading="lazy"
             >
@@ -750,7 +756,7 @@
               Save to: /our-team/images/shane.jpg
             -->
             <img
-              src="https://static.wixstatic.com/media/a3267d_e3c19b9177a441c8a4038fdaa3a5c1d8~mv2.png/v1/crop/x_0,y_172,w_1024,h_912/fill/w_424,h_376,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/20942d40-b246-4072-b7a6-549705dcf8f1.png"
+              src="images/shane.jpg"
               alt="Shane, CHFNP Team Leader"
               loading="lazy"
             >
@@ -769,7 +775,7 @@
               Save to: /about/images/teyfel.jpg
             -->
             <img
-              src="https://static.wixstatic.com/media/a3267d_3c41510e60bd4de781a60bb6393df07c~mv2.png/v1/crop/x_0,y_110,w_764,h_681/fill/w_438,h_376,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-06-25%20143344.png"
+              src="images/teyfel.jpg"
               alt="Teyfel, BSN"
               loading="lazy"
             >
@@ -785,16 +791,16 @@
           <div class="team-card-photo">
             <!--
               PHOTO PLACEHOLDER
-              Save to: /our-team/images/marciell.jpg
+              Save to: /our-team/images/marcielle.jpg
             -->
             <img
-              src="https://static.wixstatic.com/media/a3267d_3dfc77e6dd5a45e0a54e4b392d5216d8~mv2.png/v1/crop/x_0,y_35,w_1024,h_940/fill/w_410,h_376,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Mar%205%2C%202026%2C%2004_16_46%20PM.png"
-              alt="Marciell, MA"
+              src="images/marcielle.jpg"
+              alt="Marcielle, MA"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
-            <h3>Marciell</h3>
+            <h3>Marcielle</h3>
             <span class="team-card-role">Medical Staff</span>
             <span class="team-card-credentials">MA</span>
           </div>
@@ -807,13 +813,32 @@
               Save to: /our-team/images/gel-gabriel.jpg
             -->
             <img
-              src="https://static.wixstatic.com/media/a3267d_aaa9c90bf7ce4d34a2fe1eefca6c4b0e~mv2.png/v1/crop/x_0,y_14,w_1024,h_909/fill/w_424,h_376,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Mar%205%2C%202026%2C%2004_15_01%20PM.png"
+              src="images/gel.jpg"
               alt="Gel Gabriel, MA"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
             <h3>Gel Gabriel</h3>
+            <span class="team-card-role">Medical Staff</span>
+            <span class="team-card-credentials">MA</span>
+          </div>
+        </div>
+
+        <div class="team-card team-card--staff reveal reveal-delay-4">
+          <div class="team-card-photo">
+            <!--
+              PHOTO PLACEHOLDER
+              Save to: /our-team/images/new-member.jpg
+            -->
+            <img
+              src="images/noberto.jpg"
+              alt="Noberto, MA"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-card-body">
+            <h3>Noberto</h3>
             <span class="team-card-role">Medical Staff</span>
             <span class="team-card-credentials">MA</span>
           </div>
